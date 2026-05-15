@@ -5,18 +5,17 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "brands")
-public class BrandClass {
+@Table (name = "categories")
+public class CategoryClass {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    @Column (name = "logo_url")
-    private String logo;
-    @Column(name = "created_at")
+    private String description;
+    @Column (name = "created_at")
     private LocalDateTime created;
 
-    public BrandClass() {
+    public CategoryClass() {
     }
 
     public long getId() {
@@ -35,12 +34,12 @@ public class BrandClass {
         this.name = name;
     }
 
-    public String getLogo() {
-        return logo;
+    public String getDescription() {
+        return description;
     }
 
-    public void setLogo(String logo) {
-        this.logo = logo;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public LocalDateTime getCreated() {
